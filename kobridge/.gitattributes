@@ -1,3 +1,13 @@
-/gradlew text eol=lf
+# --- 개행 문자 규칙 ---
+# 모든 텍스트 파일은 LF로 통일
+# checkstyle 규칙 적용을 위한 설정 (window 개행 문자 문제)
+* text=auto eol=lf
+
+# --- 예외 규칙 ---
+# Windows 환경에서만 CRLF가 꼭 필요한 경우 (.bat 파일)
 *.bat text eol=crlf
+
+# --- 파일 종류 ---
+# 이미지/바이너리 파일은 변환 금지
+*.png binary
 *.jar binary
