@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - main
-      - feature/KOBG-4/initial-setting
-
+  pull_request:
+    branches:
+      - develop
 
 permissions:
   contents: read
