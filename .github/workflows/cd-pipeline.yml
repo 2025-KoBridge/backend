@@ -1,0 +1,59 @@
+name: Java CD with Gradle
+
+on:
+  push:
+    branches:
+      - main
+      - feature/KOBG-4/initial-setting
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 체크아웃 코드
+        uses: actions/checkout@v4
+
+      - name: ☕ JDK 17 설치
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'corretto'
+
+      - name: 📝 application.yml 생성
+        run: |
+          cd ./src/main/resources
+          touch ./application.yml
+          echo "${{ secrets.PROPERTIES }}" > ./application.yml
+        shell: bash
+
+      - name: 🔧 빌드 권한 부여
+        run: chmod +x gradlew
+
+      - name: 🏗️ 프로젝트 jar 파일 제작
+        run: |
+          chmod +x gradlew
+          ./gradlew bootJar
+
+      - name: 🐳 Docker 로그인
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: 🏗️ Docker 이미지 빌드 및 푸시
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }} .
+          docker push ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}
+
+      - name: 🚀 EC2에 프로젝트 전송 및 배포
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            cd /home/ubuntu/app
+            export IMAGE_TAG=${{ github.sha }} sudo docker compose up -d --pull always
+            sudo docker ps
+            sudo docker image prune -f
