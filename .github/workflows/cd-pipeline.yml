@@ -53,6 +53,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           script: |
+            cd /home/ubuntu/app
             export IMAGE_TAG=${{ github.sha }} sudo docker compose up -d --pull always
             sudo docker ps
             sudo docker image prune -f
