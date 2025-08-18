@@ -1,10 +1,9 @@
 name: Java CD with Gradle
 
 on:
-  push:
+  pull_request:
     branches:
-      - main
-      - feature/KOBG-4/initial-setting
+      - develop
 
 permissions:
   contents: read
