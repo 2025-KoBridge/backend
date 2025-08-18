@@ -15,6 +15,7 @@ import com.edu.kobridge.global.common.ResponseDto;
 import com.edu.kobridge.global.error.ErrorCode;
 import com.edu.kobridge.global.error.GlobalErrorCode;
 import com.edu.kobridge.global.error.exception.AppException;
+import com.edu.kobridge.global.error.exception.FilterException;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,6 +30,18 @@ public class GlobalExceptionHandler {
 		String message = e.getMessage();
 
 		// 내부 서버 에러일 경우, stack trace 출력
+		if (code == 500)
+			e.printStackTrace();
+
+		return ResponseEntity.status(code).body(ResponseDto.of(code, message));
+	}
+
+	// FilterException
+	@ExceptionHandler(FilterException.class)
+	public ResponseEntity<ResponseDto> exceptionHandler(FilterException e) {
+		int code = e.getErrorCode().getHttpStatus().value();
+		String message = e.getMessage();
+
 		if (code == 500)
 			e.printStackTrace();
 
