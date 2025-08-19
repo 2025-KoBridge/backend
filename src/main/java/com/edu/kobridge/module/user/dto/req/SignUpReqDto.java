@@ -1,4 +1,4 @@
-package com.edu.kobridge.module.user.user.dto.req;
+package com.edu.kobridge.module.user.dto.req;
 
 import com.edu.kobridge.global.enums.LangType;
 import com.edu.kobridge.global.enums.SchoolType;

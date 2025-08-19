@@ -1,4 +1,4 @@
-package com.edu.kobridge.module.user.user.service;
+package com.edu.kobridge.module.user.service;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -15,12 +15,12 @@ import com.edu.kobridge.global.error.exception.AppException;
 import com.edu.kobridge.global.util.GoogleOAuthUtil;
 import com.edu.kobridge.global.util.JwtUtil;
 import com.edu.kobridge.global.util.RedisUtil;
-import com.edu.kobridge.module.user.user.domain.repository.UserRepository;
-import com.edu.kobridge.module.user.user.dto.req.SignUpReqDto;
-import com.edu.kobridge.module.user.user.dto.res.UserResDto;
-import com.edu.kobridge.module.user.user.domain.entity.User;
-import com.edu.kobridge.module.user.user.dto.res.LoginResDto;
-import com.edu.kobridge.module.user.user.error.UserErrorCode;
+import com.edu.kobridge.module.user.domain.entity.User;
+import com.edu.kobridge.module.user.domain.repository.UserRepository;
+import com.edu.kobridge.module.user.dto.req.SignUpReqDto;
+import com.edu.kobridge.module.user.dto.res.LoginResDto;
+import com.edu.kobridge.module.user.dto.res.UserResDto;
+import com.edu.kobridge.module.user.error.UserErrorCode;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtException;

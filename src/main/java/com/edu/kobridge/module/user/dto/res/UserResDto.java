@@ -1,4 +1,4 @@
-package com.edu.kobridge.module.user.user.dto.res;
+package com.edu.kobridge.module.user.dto.res;
 
 import com.edu.kobridge.global.enums.LangType;
 import com.edu.kobridge.global.enums.VoiceType;

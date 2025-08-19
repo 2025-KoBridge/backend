@@ -1,11 +1,11 @@
-package com.edu.kobridge.module.user.user.controller;
+package com.edu.kobridge.module.user.controller;
 
 import org.springframework.http.ResponseEntity;
 
 import com.edu.kobridge.global.common.ResponseDto;
 import com.edu.kobridge.global.enums.LangType;
-import com.edu.kobridge.module.user.user.domain.entity.User;
-import com.edu.kobridge.module.user.user.dto.req.SignUpReqDto;
+import com.edu.kobridge.module.user.domain.entity.User;
+import com.edu.kobridge.module.user.dto.req.SignUpReqDto;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

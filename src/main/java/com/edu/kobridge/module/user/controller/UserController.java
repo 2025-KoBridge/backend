@@ -1,4 +1,4 @@
-package com.edu.kobridge.module.user.user.controller;
+package com.edu.kobridge.module.user.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.edu.kobridge.global.common.DataResponseDto;
 import com.edu.kobridge.global.common.ResponseDto;
 import com.edu.kobridge.global.enums.LangType;
-import com.edu.kobridge.module.user.user.domain.entity.User;
-import com.edu.kobridge.module.user.user.dto.req.SignUpReqDto;
-import com.edu.kobridge.module.user.user.dto.res.LoginResDto;
-import com.edu.kobridge.module.user.user.service.UserService;
+import com.edu.kobridge.module.user.domain.entity.User;
+import com.edu.kobridge.module.user.dto.req.SignUpReqDto;
+import com.edu.kobridge.module.user.dto.res.LoginResDto;
+import com.edu.kobridge.module.user.service.UserService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

@@ -8,7 +8,7 @@ import com.edu.kobridge.global.error.exception.AppException;
 import com.edu.kobridge.global.error.exception.FilterException;
 import com.edu.kobridge.global.util.JwtUtil;
 import com.edu.kobridge.global.util.ResponseUtil;
-import com.edu.kobridge.module.user.user.domain.entity.User;
+import com.edu.kobridge.module.user.domain.entity.User;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtException;
