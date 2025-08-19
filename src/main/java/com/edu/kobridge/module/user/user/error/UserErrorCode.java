@@ -1,4 +1,4 @@
-package com.edu.kobridge.user.error;
+package com.edu.kobridge.module.user.user.error;
 
 import org.springframework.http.HttpStatus;
 

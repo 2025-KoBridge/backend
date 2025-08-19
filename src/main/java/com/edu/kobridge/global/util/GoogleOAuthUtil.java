@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.edu.kobridge.global.error.exception.AppException;
-import com.edu.kobridge.user.domain.entity.User;
-import com.edu.kobridge.user.error.UserErrorCode;
+import com.edu.kobridge.module.user.user.domain.entity.User;
+import com.edu.kobridge.module.user.user.error.UserErrorCode;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;

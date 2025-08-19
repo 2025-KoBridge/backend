@@ -1,11 +1,11 @@
-package com.edu.kobridge.user.domain.repository;
+package com.edu.kobridge.module.user.user.domain.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.edu.kobridge.user.domain.entity.User;
+import com.edu.kobridge.module.user.user.domain.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {

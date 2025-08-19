@@ -1,4 +1,4 @@
-package com.edu.kobridge.user.dto.res;
+package com.edu.kobridge.module.user.user.dto.res;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AccessLevel;

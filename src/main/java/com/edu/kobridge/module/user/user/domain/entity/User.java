@@ -1,4 +1,4 @@
-package com.edu.kobridge.user.domain.entity;
+package com.edu.kobridge.module.user.user.domain.entity;
 
 import com.edu.kobridge.global.common.BaseTime;
 import com.edu.kobridge.global.enums.LangType;
