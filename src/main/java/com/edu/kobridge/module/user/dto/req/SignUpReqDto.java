@@ -36,7 +36,7 @@ public record SignUpReqDto(
 	@Max(value = 6, message = "학년은 6 이하여야 합니다.")
 	byte grade,
 
-	@Schema(description = "음성", example = "BASIC, CUSTOM")
+	@Schema(description = "음성", example = "ONE, TWO, THREE, FOUR")
 	@NotNull(message = "음성은 필수 값입니다.")
 	VoiceType voice
 ) {
