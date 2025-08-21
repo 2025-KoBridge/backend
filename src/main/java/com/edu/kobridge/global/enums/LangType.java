@@ -24,6 +24,6 @@ public enum LangType {
 		return Arrays.stream(LangType.values())
 			.filter(r -> r.getCode().equals(code))
 			.findAny()
-			.orElse(null);
+			.orElse(ENG);
 	}
 }
