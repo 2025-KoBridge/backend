@@ -8,7 +8,7 @@ import com.edu.kobridge.global.error.exception.AppException;
 import com.edu.kobridge.global.error.exception.FilterException;
 import com.edu.kobridge.global.util.JwtUtil;
 import com.edu.kobridge.global.util.ResponseUtil;
-import com.edu.kobridge.user.domain.entity.User;
+import com.edu.kobridge.module.user.domain.entity.User;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtException;
@@ -31,6 +31,7 @@ public class JwtAuthorizationFilter implements Filter {
 	// JWT 검사 제외할 경로 설정
 	final String LOGIN_PATH = "/api/user/google-login";
 	final String TOKEN_PATH = "/api/user/token";
+	final String LESSON_PATH = "/api/lesson/chat";
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
@@ -54,11 +55,14 @@ public class JwtAuthorizationFilter implements Filter {
 			return;
 		}
 
-		// 로그인 및 토큰 재발급 요청은 JWT 인증 필터링 없이 처리
+		// 로그인 및 토큰 재발급 요청, 레슨 시도는 JWT 인증 필터링 없이 처리
 		if (requestURI.equals(LOGIN_PATH) && req.getMethod().equals("GET")) {
 			chain.doFilter(request, response);
 			return;
 		} else if (requestURI.equals(TOKEN_PATH) && req.getMethod().equals("GET")) {
+			chain.doFilter(request, response);
+			return;
+		} else if (requestURI.startsWith(LESSON_PATH)) {
 			chain.doFilter(request, response);
 			return;
 		} else if (requestURI.contains("test/no-auth")) {

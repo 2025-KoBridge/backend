@@ -19,11 +19,11 @@ public enum LangType {
 		this.code = code;
 		this.name = name;
 	}
-
-	public static UserRoleType of(String code) {
-		return Arrays.stream(UserRoleType.values())
+  
+	public static LangType of(String code) {
+		return Arrays.stream(LangType.values())
 			.filter(r -> r.getCode().equals(code))
 			.findAny()
-			.orElse(null);
+			.orElse(ENG);
 	}
 }

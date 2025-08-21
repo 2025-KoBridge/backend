@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.edu.kobridge.global.enums.JwtVo;
 import com.edu.kobridge.global.error.GlobalErrorCode;
 import com.edu.kobridge.global.error.exception.AppException;
-import com.edu.kobridge.user.domain.entity.User;
-import com.edu.kobridge.user.domain.repository.UserRepository;
+import com.edu.kobridge.module.user.domain.entity.User;
+import com.edu.kobridge.module.user.domain.repository.UserRepository;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Header;
