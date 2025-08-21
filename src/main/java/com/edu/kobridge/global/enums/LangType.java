@@ -19,7 +19,7 @@ public enum LangType {
 		this.code = code;
 		this.name = name;
 	}
-
+  
 	public static LangType of(String code) {
 		return Arrays.stream(LangType.values())
 			.filter(r -> r.getCode().equals(code))
