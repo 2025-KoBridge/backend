@@ -26,11 +26,7 @@ jobs:
         run: |
           cd ./src/main/resources
           touch ./application.yml
-          aws s3 cp s3://${{ secrets.AWS_S3_BUCKET_NAME }}/data.sql ./data.sql
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ap-northeast-2
+          echo "${{ secrets.PROPERTIES }}" > ./application.yml
         shell: bash
 
       - name: 🔧 빌드 권한 부여
